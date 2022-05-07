@@ -1,5 +1,28 @@
 {
   "dependencies": {
     "inquirer": "^8.2.4"
-  }
+  },
+  "devDependencies": {
+    "jest": "^28.1.0"
+  },
+  "name": "team-profile",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose test/ *"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bennettem/team-port.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bennettem/team-port/issues"
+  },
+  "homepage": "https://github.com/bennettem/team-port#readme",
+  "description": ""
 }
