@@ -1,8 +1,6 @@
 {
   "dependencies": {
-    "inquirer": "^8.2.4"
-  },
-  "devDependencies": {
+    "inquirer": "^8.2.4",
     "jest": "^28.1.0"
   },
   "name": "team-profile",
@@ -12,7 +10,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jest --verbose test/ *"
+    "test": "jest --verbose test/*"
   },
   "repository": {
     "type": "git",
