@@ -142,9 +142,9 @@ function newTeammate() {
 }
 
 function genTeam() {
-  fs.writeFileSync(outIndex, html(team), function (err) {
-    if (err) {
-      throw err;
+  fs.writeFileSync(outIndex, html(team), (error) => {
+    if (error) {
+      console.log("error");
     }
     // genhtml line 75 notes linked here to html(team)
   });
