@@ -141,6 +141,7 @@ function newTeammate() {
     });
 }
 
+//fix this at somepoint
 function genTeam() {
   fs.writeFileSync(outIndex, html(team), (error) => {
     if (error) {
