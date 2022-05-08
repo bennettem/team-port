@@ -1,12 +1,7 @@
-const Intern = require("../lib/Engineer");
+const Intern = require("../lib/Intern");
 
-test("creates engineer object", () => {
-  const intern = new Intern(
-    "Spooky",
-    "5555",
-    "spooky@bug.com",
-    "UWW"
-  );
+test("creates intern object", () => {
+  const intern = new Intern("Spooky", "5555", "spooky@bug.com", "UWW");
 
   expect(intern.name).toBe("Spooky");
   expect(intern.id).toBe("5555");
@@ -15,12 +10,7 @@ test("creates engineer object", () => {
 });
 
 test("get intern school", () => {
-  const intern = new Intern(
-    "Spooky",
-    "5555",
-    "spooky@bug.com",
-    "UWW"
-  );
+  const intern = new Intern("Spooky", "5555", "spooky@bug.com", "UWW");
 
   expect(intern.getSchool()).toBe("UWW");
 });
