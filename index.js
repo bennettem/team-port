@@ -6,6 +6,7 @@ const fs = require("fs");
 const path = require("path");
 const html = require("./src/genhtml.js");
 const start = require("repl");
+const { resolve } = require("path");
 const dist = path.resolve(__dirname, "dist");
 const outIndex = path.join(dist, "index.html");
 const team = [];
@@ -146,7 +147,11 @@ function genTeam() {
   fs.writeFileSync(outIndex, html(team), (error) => {
     if (error) {
       console.log("error");
+      return;
     }
-    // genhtml line 75 notes linked here to html(team)
+    resolve({
+      ok: true,
+      message: "File created",
+    });
   });
 }
