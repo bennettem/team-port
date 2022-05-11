@@ -20,7 +20,7 @@ const genTeam = (team) => {
   // create the html for engineers
   const generateEngineer = (engineer) => {
     return `
-            <div class="card employee-card">
+            <div class="card employee-card bg-primary">
         <div class="card-header">
             <h2 class="card-title">${engineer.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
@@ -38,7 +38,7 @@ const genTeam = (team) => {
   // create the html for interns
   const generateIntern = (intern) => {
     return `
-            <div class="card employee-card">
+            <div class="card employee-card bg-primary">
         <div class="card-header">
             <h2 class="card-title">${intern.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
@@ -91,7 +91,7 @@ module.exports = (team) => {
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 jumbotron mb-3 team-heading">
+                <div class="col-12 jumbotron mb-3 team-heading bg-success">
                     <h1 class="text-center">My Team</h1>
                 </div>
             </div>

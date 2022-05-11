@@ -1,13 +1,13 @@
 {
-  "dependencies": {
-    "inquirer": "^8.2.4",
-    "jest": "^28.1.0"
-  },
   "name": "team-profile",
   "version": "1.0.0",
   "main": "index.js",
   "directories": {
     "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^28.1.0"
   },
   "scripts": {
     "test": "jest --verbose test/*"

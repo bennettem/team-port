@@ -18,6 +18,14 @@ function promptUser() {
         type: "input",
         name: "ManagerName",
         message: "What is the manager's name?",
+        validate: (ManagerName) => {
+          if (ManagerName) {
+            return true;
+          } else {
+            console.log("Please enter Manager Name");
+            return false;
+          }
+        },
       },
       {
         type: "input",
@@ -26,7 +34,7 @@ function promptUser() {
       },
       {
         type: "input",
-        name: "ManagerEmail",
+        name: "email",
         message: "What is the manager's email?",
       },
       {
@@ -39,7 +47,7 @@ function promptUser() {
       const manager = new Manager(
         response.ManagerName,
         response.ManagerId,
-        response.Manageremail,
+        response.email,
         response.ManagerNumber
       );
       team.push(manager);
@@ -62,7 +70,7 @@ function promptEngineer() {
       },
       {
         type: "input",
-        name: "EngineerEmail",
+        name: "email",
         message: "What is the engineer's email?",
       },
       {
@@ -75,8 +83,8 @@ function promptEngineer() {
       const engineer = new Engineer(
         response.EngineerName,
         response.EngineerId,
-        response.Engineeremail,
-        response.EngineerNumber
+        response.email,
+        response.EngineerGitHub
       );
       team.push(engineer);
       newTeammate();
@@ -97,7 +105,7 @@ function promptIntern() {
       },
       {
         type: "input",
-        name: "InternEmail",
+        name: "email",
         message: "What is the intern's email?",
       },
       {
@@ -110,8 +118,8 @@ function promptIntern() {
       const intern = new Intern(
         response.InternName,
         response.InternId,
-        response.Internemail,
-        response.InternNumber
+        response.email,
+        response.InternSchool
       );
       team.push(intern);
       newTeammate();
@@ -123,9 +131,9 @@ function newTeammate() {
     .prompt([
       {
         type: "list",
-        name: "NewTeammate",
+        name: "newTeammate",
         message: "Who would you like to add next?",
-        choices: ["Manager", "Engineer", "Intern", "None"],
+        choices: ["Manager", "Engineer", "Intern", "I'm Done"],
       },
     ])
     .then((response) => {
@@ -135,23 +143,19 @@ function newTeammate() {
         promptEngineer();
       } else if (response.newTeammate === "Intern") {
         promptIntern();
-      } else if (response.newTeammate === "None") {
+      } else if (response.newTeammate === "I'm Done") {
         console.log("Team complete");
         genTeam();
       }
     });
 }
 
-//fix this at somepoint
 function genTeam() {
-  fs.writeFileSync(outIndex, html(team), (error) => {
-    if (error) {
-      console.log("error");
-      return;
+  fs.writeFileSync(outIndex, html(team), function (err) {
+    if (err) {
+      throw err;
     }
-    resolve({
-      ok: true,
-      message: "File created",
-    });
   });
 }
+
+promptUser();
